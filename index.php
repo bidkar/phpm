@@ -38,9 +38,11 @@ require 'usuario.php';
     <?php
     if (isset($_GET['userid'])) {
         $id = $_GET['userid'];
-        $resultado = $usuario->findById($id);
-        var_dump($resultado);
-        var_dump($usuario);
+        if ($usuario->buscarPorId($id)) {
+            echo 'usuario encontrado';
+        } else {
+            echo 'usuario no encontrado';
+        }
     }
     ?>
 </body>

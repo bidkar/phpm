@@ -18,7 +18,7 @@ class Usuario {
         $this->datos[$campo] = $valor;
     }
 
-    public function findById(int $userid) {
+    public function buscarPorId(int $userid) {
         // conectar a la base de datos
         $cnn = new Conexion();
         // definir la consulta
@@ -46,5 +46,11 @@ class Usuario {
             return false;
         }
     }
+
+    public function nuevo() {}
+    public function actualizar() {}
+    public function eliminar() {}
+    public function login() {}
+    public function cambiarRol() {}
     
 }

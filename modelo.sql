@@ -89,3 +89,14 @@ CREATE TABLE IF NOT EXISTS `moodle`.`matriculaciones` (
     ON DELETE RESTRICT
     ON UPDATE RESTRICT)
 ENGINE = InnoDB;
+
+-- registros de ejemplo
+insert into roles (nombre,descripcion) values
+('ADMINISTRADOR','ADMINISTRADOR DEL SISTEMA');
+
+insert into usuarios
+(username,password,email,nombres,apellidos,foto,rol_id)
+values
+('bidkar','123','bidkar@cetis108.edu.mx','BIDKAR','ARAGON CARDENAS','',1);
+
+select * from usuarios where id=1;
