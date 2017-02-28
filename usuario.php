@@ -149,6 +149,33 @@ class Usuario {
         }
     }
 
-    public function login() {}
+    public static function login(string $username, string $password) {
+        $usuario = new Usuario();
+        $usuario->username = $username;
+        $usuario->password = $password;
+        $cnn = new Conexion();
+        $sql = sprintf("select * from usuarios where username='%s' and password='%s'", $usuario->username, $usuario->password);
+
+        $rst = $cnn->query($sql);
+        $cnn->close();
+        if (!$rst) {
+            die('Error al ejecutar la consulta');
+        } else {
+            if ($rst->num_rows == 1) {
+                $r = $rst->fetch_assoc();
+                $usuario->id = $r['id'];
+                $usuario->password = '';
+                $usuario->email = $r['email'];
+                $usuario->nombres = $r['nombres'];
+                $usuario->apellidos = $r['apellidos'];
+                $usuario->foto = $r['foto'];
+                $usuario->rol_id = $r['rol_id'];
+
+                return $usuario;
+            } else {
+                return false;
+            }
+        }
+    }
     
 }
