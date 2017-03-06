@@ -1,6 +1,7 @@
 <?php
 require 'conexion.php';
 require 'usuario.php';
+session_start();
 
 $error = false;
 if (isset($_POST['txtUsuario'])) {
@@ -15,6 +16,8 @@ if (isset($_POST['txtUsuario'])) {
             $error = true;
         } else {
             // login correcto
+            $_SESSION['usuario'] = $usuario;
+            header('Location:index.php');
         }
     }
 }
