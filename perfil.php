@@ -1,0 +1,1 @@
+<!-- crear un formulario que reciba los valores de nombres, apellidos, foto, rol_id -->

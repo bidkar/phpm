@@ -177,5 +177,9 @@ class Usuario {
             }
         }
     }
+
+    public function getNombreCompleto() {
+        return $this->nombres.' '.$this->apellidos;
+    }
     
 }
