@@ -100,3 +100,7 @@ values
 ('bidkar','123','bidkar@cetis108.edu.mx','BIDKAR','ARAGON CARDENAS','',1);
 
 select * from usuarios where id=1;
+
+insert into roles (nombre, descripcion) values
+('DOCENTE', 'USUARIO DOCENTE'),
+('ESTUDIANTE', 'USUARIO ESTUDIANTE');
