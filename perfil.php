@@ -25,11 +25,12 @@ if (!isset($_SESSION['usuario'])) {
 		<input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" value="<?= $usuario->apellidos ?>">
 		<input type="text" name="foto" id="foto" placeholder="Foto" value="<?= $usuario->foto; ?>">
 		<div>
-			<?= var_dump(Roles::getRoles()); ?>
 			<select name="rol_id" id="rol_id">
-				<option value="1">ADMINISTRADOR</option>
-				<option value="2" selected>DOCENTE</option>
-				<option value="3">ESTUDIANTE</option>
+				<?php
+				$roles = Roles::getRoles();
+				foreach ($roles as $key => $rol) { ?>
+					<option value="<?= $rol->id; ?>"><?= $rol->nombre; ?></option>
+				<?php }	?>
 			</select>
 		</div>
 	</form>
