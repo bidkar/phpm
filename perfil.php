@@ -28,9 +28,17 @@ if (!isset($_SESSION['usuario'])) {
 			<select name="rol_id" id="rol_id">
 				<?php
 				$roles = Roles::getRoles();
-				foreach ($roles as $key => $rol) { ?>
-					<option value="<?= $rol->id; ?>"><?= $rol->nombre; ?></option>
-				<?php }	?>
+				if (!$roles) {
+					echo '<option>Sin roles</option>';
+				} else {
+					foreach ($roles as $key => $rol) {
+						if ($usuario->rol_id == $rol->id) {
+							echo sprintf('<option value="%s" selected>%s</option>',$rol->id,$rol->nombre);
+						} else {
+							echo sprintf('<option value="%s">%s</option>',$rol->id,$rol->nombre);
+						}
+					}
+				} ?>
 			</select>
 		</div>
 	</form>
