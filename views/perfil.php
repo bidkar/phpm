@@ -1,7 +1,7 @@
 <?php
-require 'conexion.php';
-require 'usuario.php';
-require 'roles.php';
+require '../libs/conexion.php';
+require '../models/usuario.php';
+require '../models/roles.php';
 
 session_start();
 if (!isset($_SESSION['usuario'])) {

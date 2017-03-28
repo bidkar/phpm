@@ -1,7 +1,10 @@
 <?php
-require 'conexion.php';
-require 'usuario.php';
+require '../libs/conexion.php';
+require '../models/usuario.php';
 session_start();
+if (isset($_SESSION['usuario'])) {
+    header('Location:../views/home.php');
+}
 
 $error = false;
 if (isset($_POST['txtUsuario'])) {
@@ -17,7 +20,7 @@ if (isset($_POST['txtUsuario'])) {
         } else {
             // login correcto
             $_SESSION['usuario'] = $usuario;
-            header('Location:index.php');
+            header('Location:../public');
         }
     }
 }

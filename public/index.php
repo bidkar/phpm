@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['usuario'])) {
-    header('Location:home.php');
+    header('Location:../views/home.php');
 }
 ?>
 <!DOCTYPE html>
@@ -14,6 +14,6 @@ if (isset($_SESSION['usuario'])) {
 </head>
 <body>
 	<h1>Plataforma educativa CETis108</h1>
-	<a href="login.php">Iniciar sesión</a>
+	<a href="../views/login.php">Iniciar sesión</a>
 </body>
 </html>
