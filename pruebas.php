@@ -1,6 +1,6 @@
 <?php
-require 'conexion.php';
-require 'usuario.php';
+require 'libs/conexion.php';
+require 'models/usuario.php';
 
 $username = 'bidkar';
 $password = '123';
