@@ -1,4 +1,6 @@
 <?php
+namespace MVC\Models;
+
 class Usuario {
     private $datos = [
         'id' => '',
