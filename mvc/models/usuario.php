@@ -1,6 +1,8 @@
 <?php
 namespace MVC\Models;
 
+use App\MySQL\Conexion;
+
 class Usuario {
     private $datos = [
         'id' => '',

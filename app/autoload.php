@@ -1,12 +1,13 @@
 <?php
-
+return
 	spl_autoload_register(function($classname)
 	{
-		// $classname = 'MVC\Models\Usuario';
 		$path = strtolower($classname);
-		// $path = 'mvc\models\usuario';
 		$path = str_replace("\\", "/", $path);
-		// $path = 'mvc/models/usuario';
-		$path .= ".php";
-		require $path;
+		$path = APP_DIR . $path . ".php";
+		
+		if (is_readable($path))
+			require $path;
+		else
+			die('Error al leer el archivo ' . $path);
 	});
